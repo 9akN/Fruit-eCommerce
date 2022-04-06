@@ -1,0 +1,27 @@
+<h2 fxLayout="row" fxLayoutAlign="center center" >Product Details</h2>
+
+<div *ngIf="product" fxLayout="row" fxLayoutAlign="center center" >
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-header>
+      <div class="example-header-image"></div>
+      <mat-card-title><a [title]="product.name + ' details'">
+        {{ product.name }}
+      </a></mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="product.image" style="height: 100px; width: 100px;" alt="fruit">
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+      <p>
+       {{ product.description }}
+      </p>
+      <p>Price: {{ product.price }} rsd</p>
+      <p>Quantity: {{ product.quantity }} kg</p>
+      <p>Category: {{ product.category }} </p>
+      <p>Upvotes: {{ product.positive }} </p>
+      <p>Downvotes: {{ product.negative }} </p>
+
+    </mat-card-content>
+
+  <button mat-raised-button color="primary" (click)="addToCart(product)" class="btn btn-primary" routerLink="/product">Buy</button>
+
+  </mat-card>
+</div>

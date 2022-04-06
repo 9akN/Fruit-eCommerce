@@ -1,0 +1,59 @@
+<div id="border">
+
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1" (click)="showAll();">All</mat-radio-button>
+      <mat-radio-button value="2" (click)="showLess();">Currently unvailable</mat-radio-button>
+      <mat-radio-button value="3" (click)="showMore();">Currently available</mat-radio-button>
+    </mat-radio-group> 
+
+    <mat-form-field appearance="fill">
+      <mat-select placeholder="Choose category" [(value)]="selected" (selectionChange)="selectCategory()">
+        <mat-option>None</mat-option>
+        <mat-option value="apples and pears">Apples and pears</mat-option>
+        <mat-option value="berries">Berries</mat-option>
+        <mat-option value="citrus">Citrus</mat-option>
+        <mat-option value="melons">Melons</mat-option>
+        <mat-option value="stone">Stone</mat-option>
+        <mat-option value="tropical">Tropical</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div id="container">
+    
+    <div class="cont" *ngFor="let product of pageSlice">
+    <mat-card class="example-card">
+        <mat-card-title >
+          {{ product.name }}
+        </mat-card-title>
+      <img mat-card-image [src]="product.image" style="max-height: 100px; max-width: 100px;" alt="fruit">
+      <mat-card-content>
+        <p>
+         {{ product.description }}
+        </p>
+        
+        <p style="font-weight: bold;">
+          Price: {{ product.price }} rsd
+        </p>
+
+        <p style="font-weight: bold;">
+          Quantity: {{ product.quantity }} kg
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="addToCart(product)" class="btn btn-primary">Add to Cart</button>
+        <button mat-button [routerLink]="['/products', product.id]" class="btn btn-primary">Details</button>
+      </mat-card-actions>
+    </mat-card>
+    
+    </div>
+    
+    
+    
+    </div>
+    <mat-paginator [length]="this.products.length"
+                   [pageSize]="9"
+                   [pageSizeOptions]="[3, 6, 9, 15, 100]"
+                   (page)="onPageChange($event)">
+    </mat-paginator>
+    </div>
+  

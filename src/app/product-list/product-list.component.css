@@ -1,0 +1,43 @@
+#container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .example-card {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 350px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  #pictureContainer{
+    height: 100px; 
+    width: 100px;
+  }
+  #border{
+    align-items: center;
+    justify-content: center;
+  }
+  mat-paginator{
+    width: 60%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 20%;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+    margin-top:  20px;
+  }
+  mat-radio-group{
+    margin-top: 30px;
+    margin-left: 35%;
+  }
+
+  mat-form-field {
+    margin-top: 30px;
+    margin-left: 2%;
+  }

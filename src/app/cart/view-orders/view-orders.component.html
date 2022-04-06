@@ -1,0 +1,53 @@
+<div id="border">
+
+    <div id="container">
+    
+    <div class="cont" *ngFor="let product of orders">
+    <mat-card class="example-card">
+        <mat-card-title >
+          {{ product.name }}
+        </mat-card-title>
+      <img mat-card-image [src]="product.image" style="max-height: 100px; max-width: 100px;" alt="fruit">
+      <mat-card-content>
+        <p>
+         {{ product.description }}
+        </p>
+        
+        <p style="font-weight: bold;">
+          Price: {{ product.price }} rsd
+        </p>
+
+        <p style="font-weight: bold;">
+          Quantity: {{ product.quantity }} kg
+        </p>
+
+        <p style="font-weight: bold;">
+          Upvotes: {{ product.positive }}
+        </p>
+
+        <p style="font-weight: bold;">
+          Downvotes: {{ product.negative }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div>
+          <button mat-button (click)="upvote(product.id)" class="mat-icon-rtl-mirror">
+            <span class="material-icons">
+              thumb_up
+            </span>
+          </button>
+          <button mat-button (click)="downvote(product.id)" class="mat-icon-rtl-mirror">
+            <span class="material-icons">
+              thumb_down
+            </span>
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    
+    </div>
+    
+    
+    
+    </div>
+  

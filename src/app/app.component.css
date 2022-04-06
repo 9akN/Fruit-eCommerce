@@ -1,0 +1,22 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.child {
+    width: 300px;
+    height: 200px;
+}
+
+#mailLink{
+    color: black;
+}
+footer{
+    margin-top: auto;
+}
+#logo{
+    width: 4vw;
+    height: 5vh;
+}
+
